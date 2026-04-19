@@ -56,7 +56,8 @@ def ping_loop():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    with open("templates/index.html", "r") as f:
+        return f.read()
 
 @app.route("/api/stats")
 def stats():
